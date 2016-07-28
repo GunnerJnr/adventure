@@ -38,4 +38,9 @@ while True:
     # ask the user for a direction, and use the valid_directions dictionary to move us to that position.
     # When the loop begins again, we'll be in that new position
     direction = raw_input('which direction do you want to go?\n')
-    position = valid_directions[direction]
+    # here we check the user has entered a valid direction
+    new_position = valid_directions.get(direction)
+    if new_position:
+        position = new_position
+    else:
+        print "sorry, you have entered an invalid direction!"
